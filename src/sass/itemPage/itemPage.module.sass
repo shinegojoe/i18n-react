@@ -1,0 +1,80 @@
+.itemPageContainer
+  display: flex
+  flex-direction: column
+  align-items: center
+.itemListLayout
+  display: grid
+  grid-template-columns: 400px 400px 400px
+
+.previewLayout
+  // border: 1px solid
+  position: relative
+  margin: 20px
+
+  .closeIcon
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 10
+  .itemWrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    // padding: 20px
+    box-sizing: border-box
+    // margin: 20px
+    max-width: 360px
+    // border: 1px solid
+    .itemInfo
+      width: 100%
+      padding: 0 64px
+      // border: 1px solid
+    .addShopBtn
+      background-color: #000000
+      color: white
+    
+    .previewImg
+      width: 100%
+      height: 100%
+      cursor: pointer
+      &:hover
+        opacity: 0.8
+    
+
+
+.itemLayout
+  display: flex
+  justify-content: center
+  .itemContainer
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .imgWrapper
+      position: relative
+      // border: 1px solid
+      
+      .itemImg
+        width: 600px
+        height: 520px
+        border: 1px solid
+        img
+          width: 100%
+          height: 100%
+      .logo
+        position: absolute
+        top: 0
+        left: 0
+.move
+  // background-color: red
+  width: 100%
+  height: 100%
+.hideUpload
+  display: none
+
+.colorSelector
+  display: flex
+
+.itemInputWrapper
+  display: flex
+  flex-direction: column
