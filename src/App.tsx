@@ -4,7 +4,7 @@ import { AppBarRouter } from './router/router'
 import { useSelector, useDispatch } from "react-redux"
 import { loginAction } from './action/login.action'
 import { useEffect } from 'react'
-import Project from './component/project/project'
+import Project from './component/home/project'
 
 
 function App() {
