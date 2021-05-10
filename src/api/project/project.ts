@@ -5,7 +5,7 @@ import apiString from '../apiString'
 
 
 const list = async() => {
-    const cfg: AxiosRequestConfig  = {
+    const cfg: AxiosRequestConfig = {
         method: 'GET',
         url: apiString.project,
     }
@@ -13,4 +13,26 @@ const list = async() => {
     return res
 }
 
-export default { list }
+const add = async(name: string) => {
+    const cfg: AxiosRequestConfig = {
+        method: 'POST',
+        url: apiString.project,
+        data: {
+            name: name,
+            coverPhoto: ''
+        }
+    }
+    const res = await instance.run(cfg)
+    return res
+}
+
+const del = async(id: number) => {
+    const cfg: AxiosRequestConfig = {
+        method: 'DELETE',
+        url: `${apiString.project}/${id}`,
+    }
+    const res = await instance.run(cfg)
+    return res
+}
+
+export default { list, add, del }

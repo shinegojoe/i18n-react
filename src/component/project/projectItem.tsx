@@ -1,4 +1,5 @@
-import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom"
+import projectApi from '../../api/project/project'
 
 
 const ProjectItem = (props: any) => {
@@ -12,6 +13,13 @@ const ProjectItem = (props: any) => {
         })
     }
 
+    const delClick = async()=> {
+        const id = props.item.id
+        console.log(id)
+        const res = await projectApi.del(id)
+        props.getProjectList()
+    }
+
     return (
         <div>
             <div>
@@ -20,6 +28,7 @@ const ProjectItem = (props: any) => {
                     const id = props.item.id
                     go(id)
                 }}>go</button>
+                <button onClick={delClick}>del</button>
             </div>
         </div>
     )
