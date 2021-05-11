@@ -64,7 +64,10 @@ const Row = (props: any) => {
                 })}
             </div>
             {rowList.map((item, index)=> {
-                return <RowItem key={index} item={item} langList={langList}></RowItem>
+                return <RowItem key={index} 
+                item={item} 
+                getRowList={getRowList}
+                langList={langList}></RowItem>
             })}
         </div>
     )

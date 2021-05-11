@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
 import item from '../../api/shop/item'
 import langApi from '../../api/language/language'
+import rowApi from '../../api/row/row'
 import textApi from '../../api/text/text'
 import style from '../../sass/rowPage/rowPage.module.sass'
 import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+
 
 const RowItem = (props: any) => {
     console.log('row props', props)
+    const rowId = props.item.id
     
     const [name, setName] = useState('')
     const [textMap, setTextMap] = useState<any>({})
@@ -44,7 +48,7 @@ const RowItem = (props: any) => {
         const data = {
             langId: langNameToId(currentKey),
             text: text,
-            rowId: props.item.id
+            rowId: rowId
         }
         const res = await textApi.update(data)
         return res
@@ -52,6 +56,11 @@ const RowItem = (props: any) => {
 
     const onBlur = () => {
         const res = saveText()
+    }
+
+    const delClick = async() => {
+        const res = await rowApi.del(rowId)
+        props.getRowList()
     }
 
     
@@ -66,6 +75,7 @@ const RowItem = (props: any) => {
                     onChange={(e)=> {textUpdate(e, key)}}
                     defaultValue={textMap[key]}></TextField>
             })}</div>
+            <Button onClick={delClick}>del</Button>
         
         </div>
     )

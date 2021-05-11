@@ -26,8 +26,14 @@ const add = async(data: any) => {
     return res
 }
 
-// const rowTextData = (pageId: number) => {
+const del = async(id: number) => {
+    const cfg: AxiosRequestConfig = {
+        method: 'DELETE',
+        url: `${apiString.rowTextData}/${id}`
+    }
+    const res = await instance.run(cfg)
+    return res
+    
+}
 
-// }
-
-export default { list, add }
+export default { list, add, del }
