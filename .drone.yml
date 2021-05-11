@@ -1,0 +1,13 @@
+kind: pipeline
+name: i18n CI
+type: docker
+
+steps:
+  - name: test
+    image: node:latest
+    # image: node:12.22.1-alpine
+    commands:
+      - npm install
+
+
+  
