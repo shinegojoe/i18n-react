@@ -3,10 +3,13 @@ import { AxiosRequestConfig} from 'axios'
 import apiString from '../apiString'
 
 
-const list = async() => {
+const list = async(projectId: number) => {
     const cfg: AxiosRequestConfig  = {
         method: 'GET',
-        url: apiString.projectLang
+        url: apiString.projectLang,
+        params: {
+            projectId
+        }
     }
     const res = await instance.run(cfg)
     return res

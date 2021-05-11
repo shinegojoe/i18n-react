@@ -28,7 +28,7 @@ const Page = (props: any) => {
     }
 
     const getProjectLangList = async() => {
-        const res = await projectLangApi.list()
+        const res = await projectLangApi.list(projectId)
         console.log(res)
         setProjectLangList(res.data)
         
@@ -47,10 +47,13 @@ const Page = (props: any) => {
     return (
         <div>
             <div>
-                <AddLang projectId={projectId} getProjectLangList={getProjectLangList}></AddLang>
+                <AddLang 
+                    projectId={projectId}
+                    getProjectLangList={getProjectLangList}>
+                </AddLang>
             </div>
             <div>{projectLangList.map((item: any, index: number)=> {
-                return <div>{item.langId}</div>
+                return <div key={index}>{item.name}</div>
             })}</div>
             
             <div>
@@ -58,7 +61,12 @@ const Page = (props: any) => {
                 <Button onClick={addClick}>add page</Button>
             </div>
             {pageList.map((item: any, index)=> {
-                return <PageItem key={index} item={item} getPageList={getPageList}></PageItem>
+                return <PageItem 
+                    key={index}
+                    item={item}
+                    projectId={projectId}
+                    getPageList={getPageList}>    
+                </PageItem>
             })}
         </div>
     )

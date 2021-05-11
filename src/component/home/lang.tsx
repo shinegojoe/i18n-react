@@ -10,7 +10,7 @@ const Language = () => {
 
     useEffect(() => {
         getLangList()
-    })
+    }, [])
 
     const getLangList = async () => {
         const res = await langApi.list()

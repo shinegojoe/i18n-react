@@ -7,7 +7,7 @@ import apiString from '../apiString'
 const list = async(pageId: number) => {
     const cfg: AxiosRequestConfig  = {
         method: 'GET',
-        url: apiString.row,
+        url: apiString.rowTextData,
         params: {
             pageId
         }
@@ -16,4 +16,18 @@ const list = async(pageId: number) => {
     return res
 }
 
-export default { list }
+const add = async(data: any) => {
+    const cfg: AxiosRequestConfig = {
+        method: 'POST',
+        url: apiString.rowTextData,
+        data
+    }
+    const res = await instance.run(cfg)
+    return res
+}
+
+// const rowTextData = (pageId: number) => {
+
+// }
+
+export default { list, add }

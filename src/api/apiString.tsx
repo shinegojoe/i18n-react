@@ -19,6 +19,8 @@ interface IApiString {
   page: string
   row: string
   projectLang: string
+  text: string
+  rowTextData: string
 }
 
 const apiString: IApiString = {
@@ -36,9 +38,9 @@ const apiString: IApiString = {
   lang: `${base}/language`,
   page: `${base}/page`,
   row: `${base}/row`,
-  projectLang: `${base}/projectLang`
-  
-
+  projectLang: `${base}/projectLang`,
+  text: `${base}/text`,
+  rowTextData: `${base}/rowTextData`
 
 }
 

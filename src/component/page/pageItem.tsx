@@ -4,12 +4,14 @@ import { withRouter } from "react-router-dom"
 
 const PageItem = (props: any) => {
     const pageId = props.item.id
+    const projectId = props.projectId
 
     const go = (pageId: number) => {
         props.history.push({
             pathname: '/row',
             state: {
-                pageId
+                pageId,
+                projectId
             }
         })
     }
