@@ -15,7 +15,7 @@ const AppBarRouter = () => {
       <Route path='/signUp' component={SignUp}></Route>
       <Route path='/forgetPwd' component={ForgetPassword}></Route> */}
       <Route path='/page' component={Page}></Route>
-      <Route path='/project' component={Main}></Route>
+      <Route path='/' component={Main}></Route>
       <Route path='/row' component={Row}></Route>
 
 
